@@ -12,7 +12,9 @@ const loginPage = document.getElementById("login");
 const chatApp = document.getElementById("chat-app");
 
 
-const BACKEND_BASE = "http://localhost:8787";
+//const BACKEND_BASE = "http://localhost:8787";
+const BACKEND_BASE = "https://kozani-backend.onrender.com";
+
 
 // If you use this, make sure setStatus is defined somewhere:
 function setStatus(text) {
@@ -153,3 +155,4 @@ if (form && input) {
     }
   });
 }
+
