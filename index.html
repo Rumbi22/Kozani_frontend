@@ -7,7 +7,28 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="app">
+
+
+    <section id="login" class="login-page">
+      <div class="login-card">
+        <h2 class="login-title">Sign In</h2>
+
+        <form id="login-form" class="login-form">
+          <label for="user_number">Phone Number</label>
+          <input type="tel" id="user_number" class="login-input" placeholder="Enter your number" required />
+
+          <label for="user_password">Password</label>
+          <input type="password" id="user_password" class="login-input" placeholder="Enter your password" required />
+
+          <button type="submit" class="login-button">Sign In</button>
+        </form>
+      </div>
+    </section>
+
+
+
+
+    <main class="app" id="chat-app" style="display: none;">
       <header>Kozani</header>
 
       <div id="model-status">
