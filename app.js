@@ -34,7 +34,7 @@ const API_BASE =
 
 async function sendToKozaniBackend(userText, retrievedSnippets = []) {
   try {
-    const response = await fetch("https://kozani-backend.onrender.com/api/kozani-chat", {
+    const response = await fetch("https://kozani-backend-kfrg.onrender.com/api/kozani-chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
