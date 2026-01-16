@@ -16,13 +16,23 @@ function setStatus(text) {
 function addMsg(text, sender = "bot") {
   if (!chat) return;
 
+  // Are we already near the bottom?
+  const threshold = 80; // px
+  const isNearBottom =
+    chat.scrollHeight - chat.scrollTop - chat.clientHeight < threshold;
+
   const msgEl = document.createElement("div");
   msgEl.className = sender === "user" ? "msg user" : "msg bot";
   msgEl.textContent = text;
 
   chat.appendChild(msgEl);
-  chat.scrollTop = chat.scrollHeight;
+
+  // Only auto-scroll if user hasn't scrolled up
+  if (isNearBottom) {
+    chat.scrollTo({ top: chat.scrollHeight, behavior: "smooth" });
+  }
 }
+
 
 /*-------------------- Ask backend ---------------------------------------*/
 
@@ -59,6 +69,14 @@ async function sendToKozaniBackend(userText, retrievedSnippets = []) {
   }
 }
 
+
+window.addEventListener("DOMContentLoaded", () => {
+  if (!chat || chat.children.length > 0) return; // don’t greet twice
+  addMsg("Hello! I'm Kozani, your perinatal companion 🤍\n\nHow are you feeling today? Is there anything you'd like to talk about?",
+    "bot");
+});
+
+
 // --------------------------- Form submit handler ------------------------
 if (form && input) {
   form.addEventListener("submit", async (evt) => {
@@ -83,3 +101,5 @@ if (form && input) {
     }
   });
 }
+
+

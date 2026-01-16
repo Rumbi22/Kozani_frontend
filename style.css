@@ -91,13 +91,13 @@ header {
   margin-bottom: 8px;
 }
 
-#progress-container {
+/*#progress-container {
   width: 100%;
   height: 6px;
   background: #eee;
   border-radius: 999px;
   overflow: hidden;
-}
+}*/
 
 #model-progress {
   height: 100%;
