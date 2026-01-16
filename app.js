@@ -70,12 +70,12 @@ async function sendToKozaniBackend(userText, retrievedSnippets = []) {
 }
 
 
-window.addEventListener("DOMContentLoaded", () => {
+/*/window.addEventListener("DOMContentLoaded", () => {
   if (!chat || chat.children.length > 0) return; // don’t greet twice
   addMsg("Hello! I'm Kozani, your perinatal companion 🤍\n\nHow are you feeling today? Is there anything you'd like to talk about?",
     "bot");
 });
-
+*/
 
 // --------------------------- Form submit handler ------------------------
 if (form && input) {
