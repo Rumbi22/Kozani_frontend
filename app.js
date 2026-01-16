@@ -13,6 +13,11 @@ function setStatus(text) {
 }
 
 // ------------------------- Chat message helper -------------------------
+
+const conversationHistory = [];
+
+
+
 function addMsg(text, sender = "bot") {
   if (!chat) return;
 
@@ -51,6 +56,7 @@ async function sendToKozaniBackend(userText, retrievedSnippets = []) {
       },
       body: JSON.stringify({
         query: userText,
+        history: conversationHistory.slice(-10), // 👈 send last 8 turns
         snippets: retrievedSnippets,
         language: "en",
         client: "kozani-web-v3"
@@ -87,12 +93,29 @@ if (form && input) {
 
     // Show user's message
     addMsg(text, "user");
+    
+    // 2️⃣ STORE user message in memory
+    conversationHistory.push({
+    role: "user",
+    content: text
+  });
+
+
     input.value = "";
     setStatus("Thinking…");
+
+    
 
     try {
       const res = await sendToKozaniBackend(text);
       addMsg(res.answer, "bot");  // ⬅️ use the answer string
+      // 4️⃣ STORE assistant reply in memory
+      conversationHistory.push({
+      role: "assistant",
+      content: res.answer
+    });
+
+
     } catch (err) {
       console.error(err);
       addMsg("⚠️ Something went wrong talking to the model.", "bot");
