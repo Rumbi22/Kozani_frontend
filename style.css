@@ -200,9 +200,15 @@ header {
 
 
 .hero {
+  display: block;        /* force vertical flow */
   max-width: 720px;
   margin: 3rem auto 2rem;
   padding: 0 1.25rem;
+}
+
+.hero h1,
+.hero p {
+  display: block;
 }
 
 .brand {
