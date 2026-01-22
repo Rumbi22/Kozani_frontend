@@ -127,8 +127,8 @@ if (form && input) {
 
 
 addMsg(
-  "Hello, I’m Kozani. I’m here to support the emotional side of pregnancy and early motherhood — including times when you may feel sad, anxious, or overwhelmed. If you’d like, you can tell me a little about yourself, or share what’s been on your mind today.
-  , "bot"
+  "Hello james, I’m Kozani. I’m here to support the emotional side of pregnancy and early motherhood — including times when you may feel sad, anxious, or overwhelmed. If you’d like, you can tell me a little about yourself, or share what’s been on your mind today.",
+  "bot"
 );
 
 
