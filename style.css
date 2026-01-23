@@ -221,7 +221,9 @@ header.hero {
 
 header.hero .brand { margin: 0; }
 header.hero .tagline { margin: 0; }
+
 header.hero .description { margin: 0; max-width: 100%; }
+header.hero .tagline2 { margin: 0; }
 /*header.hero { width: 100%; }*/
 
 
@@ -236,6 +238,13 @@ header.hero .description { margin: 0; max-width: 100%; }
   font-size: 1.05rem;
   font-weight: 500;
   color: #374151; /* soft neutral */
+  margin-bottom: 1rem;
+}
+
+.tagline2 {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #0a0b0d; /* soft neutral */
   margin-bottom: 1rem;
 }
 
